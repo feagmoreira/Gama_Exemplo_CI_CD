@@ -26,7 +26,6 @@ jobs:
       - attach_workspace:
           at: ./target
       - run: mvn test
-
 workflows:
   version: 2
 
