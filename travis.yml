@@ -1,0 +1,17 @@
+language: bash
+service: docker
+before_install:
+  - cd curso-rest
+  - echo "Estou na pasta do Docker"
+script:
+  - docker-compose build
+before_deploy:
+  - echo "${DOCKER_PASSWORD}" | docker login --username "$DOCKER_USERNAME" --pasword-stdin
+deploy:
+  provider: script
+  script:
+    docker push gomesrocha/cursorest;
+  on:
+    branch: main
+  notifications:
+    email: false
