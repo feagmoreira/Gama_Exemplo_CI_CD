@@ -1,7 +1,7 @@
 version: '3.4'
 services: 
   curso-rest:
-    image: gomesrocha/cursorest
+    image: cfabiogomes/cursorest
     restart: always
     build: ./curso-rest
     working_dir: /curso-rest
